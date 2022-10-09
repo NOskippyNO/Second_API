@@ -2,17 +2,17 @@
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 
-import useCharacters from '@/composables/useCharacters'
+import useFilms from '@/composables/useFilms'
 
 const route = useRoute()
-const { fetchCharacter, currentCharacter } = useCharacters()
+const { fetchFilm, currentFilm } = useFilms()
 
 onMounted(async () => {
-  await fetchCharacter(route.params.id)
+  await fetchFilm(route.params.id)
 })
 
 onUnmounted(() => {
-  currentCharacter.value = null
+  currentFilm.value = null
 })
 </script>
 
@@ -21,14 +21,14 @@ onUnmounted(() => {
     class="min-h-screen bg-gradient-to-r from-fuchsia-900 to-red-700 py-8 text-white"
   >
     <div
-      v-if="currentCharacter"
+      v-if="currentFilm"
       class="flex flex-col items-center justify-center gap-6"
     >
-      <img :src="currentCharacter.imageUrl" :alt="currentCharacter.name" />
+      <img :src="currentFilm.movie_banner" :alt="currentFilm.title" />
       <h1 class="text-white-800 text-6xl font-bold">
-        Hi, I'm {{ currentCharacter.name }}
+        Hi, I'm {{ currentFilm.title }}
       </h1>
-      <pre>{{ currentCharacter }}</pre>
+      <pre>{{ currentFilm }}</pre>
     </div>
   </main>
 </template>

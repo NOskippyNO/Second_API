@@ -1,11 +1,11 @@
 <script setup>
 const props = defineProps({
-  character: {
+  film: {
     type: Object,
     default: () => ({
-      _id: -1,
-      name: 'Unknown',
-      imageUrl: 'https://via.placeholder.com/150',
+      id: -1,
+      title: 'Unknown',
+      image: 'https://via.placeholder.com/150',
     }),
   },
 })
@@ -13,16 +13,13 @@ const props = defineProps({
 
 <template>
   <RouterLink
-    :to="`/character/${props.character._id}`"
+    :to="`/film/${props.film.id}`"
     class="name rounded-lg bg-white shadow-lg"
   >
-    <img
-      class="w-full rounded-t-lg object-cover"
-      :src="props.character.imageUrl"
-    />
+    <img class="w-full rounded-t-lg object-cover" :src="props.film.image" />
     <div class="p-4">
       <h2 class="text-2xl font-semibold text-gray-800">
-        {{ props.character.name }}
+        {{ props.film.title }}
       </h2>
     </div>
   </RouterLink>
