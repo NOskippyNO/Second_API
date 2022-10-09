@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
   <RouterLink
     :to="`/character/${props.character._id}`"
-    class="rounded-lg bg-white shadow-lg"
+    class="name rounded-lg bg-white shadow-lg"
   >
     <img
       class="w-full rounded-t-lg object-cover"
@@ -27,3 +27,9 @@ const props = defineProps({
     </div>
   </RouterLink>
 </template>
+
+<style scoped lang="postcss">
+.name {
+  @apply cursor-pointer overflow-hidden rounded-md bg-gradient-to-r from-purple-500 to-fuchsia-500 p-8 shadow-md transition-transform duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-slate-800;
+}
+</style>
