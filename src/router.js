@@ -5,7 +5,7 @@ import HomePage from '@/views/HomePage.vue'
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
   {
-    path: '/films/:id',
+    path: '/film/:id',
     name: 'film',
     component: () => import('@/views/FilmDetails.vue'),
   },

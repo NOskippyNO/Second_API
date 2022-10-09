@@ -15,7 +15,7 @@ const useFilms = () => {
         page: page.value,
       },
     })
-    films.value.push(...data.data)
+    films.value.push(...data)
     page.value++
   }
 

@@ -24,11 +24,19 @@ onUnmounted(() => {
       v-if="currentFilm"
       class="flex flex-col items-center justify-center gap-6"
     >
-      <img :src="currentFilm.movie_banner" :alt="currentFilm.title" />
+      <img :src="currentFilm.image" :alt="currentFilm.title" />
       <h1 class="text-white-800 text-6xl font-bold">
-        Hi, I'm {{ currentFilm.title }}
+        {{ currentFilm.title }}
       </h1>
-      <pre>{{ currentFilm }}</pre>
+      <p class="info">
+        {{ currentFilm }}
+      </p>
     </div>
   </main>
 </template>
+
+<style scoped lang="postcss">
+.info {
+  @apply break-words;
+}
+</style>
